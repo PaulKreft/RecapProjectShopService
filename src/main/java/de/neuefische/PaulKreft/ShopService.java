@@ -8,14 +8,12 @@ public class ShopService {
     OrderListRepo orders;
     ProductRepo products;
 
-    public void placeOrder(String id) {
-        Product product = products.getProductById(id);
+    public void placeOrder(UUID uuid) {
+        Product product = products.getProductByUuid(uuid);
         if(product == null) {
             System.out.println("Sorry, the product you asked for is not available!");
             return;
         }
-
-        UUID uuid = Generators.randomBasedGenerator().generate();
 
         Order order = new Order(uuid, product);
 
