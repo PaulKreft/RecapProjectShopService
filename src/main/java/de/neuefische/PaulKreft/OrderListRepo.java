@@ -2,6 +2,7 @@ package de.neuefische.PaulKreft;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class OrderListRepo {
     private List<Order> orders;
@@ -11,23 +12,23 @@ public class OrderListRepo {
     }
 
 
-    public void addOrder(Order newOrder) {
-        orders.add(newOrder);
+    public void addOrder(Order order) {
+        orders.add(order);
     }
 
-    public void removeOrder(Product newOrder) {
-        orders.remove(newOrder);
+    public void removeOrder(Order order) {
+        orders.remove(order);
     }
 
-    public void removeAllOrders(Product newOrder) {
+    public void removeAllOrders() {
         orders.clear();
     }
 
-    public Order getOrderById(String id) {
-        List<Order> filteredById = orders.stream().filter(product -> product.uuid().equals(id)).toList();
+    public Order getOrderById(UUID uuid) {
+        List<Order> filteredById = orders.stream().filter(product -> product.uuid().equals(uuid)).toList();
 
         if (filteredById.isEmpty()) {
-            System.out.println("No order found with id " + id);
+            System.out.println("No order found with id " + uuid);
             return null;
         }
 

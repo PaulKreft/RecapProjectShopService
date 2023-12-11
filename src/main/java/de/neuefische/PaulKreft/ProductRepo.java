@@ -1,27 +1,28 @@
 package de.neuefische.PaulKreft;
 
 import java.util.List;
+import java.util.UUID;
 
 public class ProductRepo {
     private List<Product> products;
 
-    public void addProduct(Product newProduct) {
-        products.add(newProduct);
+    public void addProduct(Product product) {
+        products.add(product);
     }
 
-    public void removeProduct(Product newProduct) {
-        products.remove(newProduct);
+    public void removeProduct(Product product) {
+        products.remove(product);
     }
 
-    public void removeAllProducts(Product newProduct) {
+    public void removeAllProducts() {
         products.clear();
     }
 
-    public Product getProductById(String id) {
-        List<Product> filteredById = products.stream().filter(product -> product.uuid().equals(id)).toList();
+    public Product getProductByUuid(UUID uuid) {
+        List<Product> filteredById = products.stream().filter(product -> product.uuid().equals(uuid)).toList();
 
         if(filteredById.isEmpty()) {
-            System.out.println("No product found with id " + id);
+            System.out.println("No product found with id " + uuid);
             return null;
         }
 
