@@ -1,6 +1,7 @@
 package de.neuefische.PaulKreft;
 
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 public interface OrderRepo {
@@ -12,5 +13,5 @@ public interface OrderRepo {
 
     Order getOrderByUuid(UUID uuid);
 
-    List<Product> getAllProducts();
+    Map<UUID, Order> getAllProducts();
 }
