@@ -1,7 +1,9 @@
 package de.neuefische.PaulKreft;
 
+import java.util.UUID;
+
 public record Order(
-        String id,
+        UUID uuid,
         Product product
 ) {
 }

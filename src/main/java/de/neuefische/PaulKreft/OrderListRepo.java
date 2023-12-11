@@ -24,7 +24,7 @@ public class OrderListRepo {
     }
 
     public Order getOrderById(String id) {
-        List<Order> filteredById = orders.stream().filter(product -> product.id().equals(id)).toList();
+        List<Order> filteredById = orders.stream().filter(product -> product.uuid().equals(id)).toList();
 
         if (filteredById.isEmpty()) {
             System.out.println("No order found with id " + id);

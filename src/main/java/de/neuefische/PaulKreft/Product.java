@@ -1,7 +1,9 @@
 package de.neuefische.PaulKreft;
 
+import java.util.UUID;
+
 public record Product(
-        String id,
+        UUID uuid,
         String name,
         int price
 ) {

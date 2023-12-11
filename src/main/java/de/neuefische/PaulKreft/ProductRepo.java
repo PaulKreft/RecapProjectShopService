@@ -18,7 +18,7 @@ public class ProductRepo {
     }
 
     public Product getProductById(String id) {
-        List<Product> filteredById = products.stream().filter(product -> product.id().equals(id)).toList();
+        List<Product> filteredById = products.stream().filter(product -> product.uuid().equals(id)).toList();
 
         if(filteredById.isEmpty()) {
             System.out.println("No product found with id " + id);
