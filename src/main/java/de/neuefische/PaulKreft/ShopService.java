@@ -1,12 +1,14 @@
 package de.neuefische.PaulKreft;
 
-import com.fasterxml.uuid.Generators;
-
 import java.util.UUID;
 
 public class ShopService {
-    OrderListRepo orders;
+    OrderMapRepo orders;
     ProductRepo products;
+
+    public ShopService(OrderMapRepo orders) {
+        this.orders = orders;
+    }
 
     public void placeOrder(UUID uuid) {
         Product product = products.getProductByUuid(uuid);

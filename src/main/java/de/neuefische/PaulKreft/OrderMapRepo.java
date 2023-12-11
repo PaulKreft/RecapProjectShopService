@@ -1,11 +1,16 @@
 package de.neuefische.PaulKreft;
 
-import java.util.List;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
 public class OrderMapRepo implements OrderRepo {
     private Map<UUID, Order> orders;
+
+    public OrderMapRepo() {
+        this.orders = new HashMap<>();
+    }
+
     public void addOrder(Order order) {
         orders.put(order.uuid(), order);
     };
