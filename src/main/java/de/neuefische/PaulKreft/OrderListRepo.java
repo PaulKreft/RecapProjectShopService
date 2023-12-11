@@ -13,6 +13,10 @@ public class OrderListRepo {
         orders.remove(newOrder);
     }
 
+    public void removeAllOrders(Product newOrder) {
+        orders.clear();
+    }
+
     public Order getOrderById(String id) {
         List<Order> filteredById = orders.stream().filter(product -> product.id().equals(id)).toList();
 

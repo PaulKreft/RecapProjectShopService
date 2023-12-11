@@ -13,6 +13,10 @@ public class ProductRepo {
         products.remove(newProduct);
     }
 
+    public void removeAllProducts(Product newProduct) {
+        products.clear();
+    }
+
     public Product getProductById(String id) {
         List<Product> filteredById = products.stream().filter(product -> product.id().equals(id)).toList();
 
