@@ -9,7 +9,7 @@ public class ProductRepo {
         products.add(newProduct);
     }
 
-    public void removeProducts(Product newProduct) {
+    public void removeProduct(Product newProduct) {
         products.remove(newProduct);
     }
 
@@ -24,7 +24,7 @@ public class ProductRepo {
         return filteredById.get(0);
     }
 
-    public List<Product> getAllProduct(Product newProduct) {
+    public List<Product> getAllProducts() {
         return products;
     }
 
